@@ -5,7 +5,8 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team5987.robot.commands.DriveCommand;
-import org.usfirst.frc.team5987.robot.commands.EatCubeCommand;
+import org.usfirst.frc.team5987.robot.commands.HoldEatCubeCommand;
+import org.usfirst.frc.team5987.robot.commands.TimeEatCubeCommand;
 import org.usfirst.frc.team5987.robot.commands.ThrowUpCubeCommand;
 
 /**
@@ -27,6 +28,8 @@ public class OI {
 	Button a = new JoystickButton(xbox, 1);
 	Button b = new JoystickButton(xbox, 2);
 	Button x = new JoystickButton(xbox, 3);
+	Button y = new JoystickButton(xbox, 4);
+	
 	
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
@@ -51,9 +54,9 @@ public class OI {
 	public OI(){
 		
 		a.whenPressed(new DriveCommand());
-		b.whenPressed(new EatCubeCommand());
+		b.whenPressed(new TimeEatCubeCommand());
 		x.whenPressed(new ThrowUpCubeCommand());
-
+		y.whileHeld(new HoldEatCubeCommand());
 		
 	}
 }

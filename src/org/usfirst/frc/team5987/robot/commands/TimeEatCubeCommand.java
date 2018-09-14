@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class EatCubeCommand extends Command {
+public class TimeEatCubeCommand extends Command {
 	
 	Timer wait = new Timer();
 	
-    public EatCubeCommand() {
+    public TimeEatCubeCommand() {
     	
     	requires(Robot.intakeSubsystem);
     	requires(Robot.gripperSubsystem);
