@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team5987.robot.commands.DriveCommand;
 import org.usfirst.frc.team5987.robot.commands.EatCubeCommand;
+import org.usfirst.frc.team5987.robot.commands.ThrowUpCubeCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -25,6 +26,7 @@ public class OI {
     
 	Button a = new JoystickButton(xbox, 1);
 	Button b = new JoystickButton(xbox, 2);
+	Button x = new JoystickButton(xbox, 3);
 	
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
@@ -50,6 +52,7 @@ public class OI {
 		
 		a.whenPressed(new DriveCommand());
 		b.whenPressed(new EatCubeCommand());
+		x.whenPressed(new ThrowUpCubeCommand());
 
 		
 	}
