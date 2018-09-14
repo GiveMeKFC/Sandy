@@ -5,9 +5,10 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team5987.robot.commands.DriveCommand;
-import org.usfirst.frc.team5987.robot.commands.HoldEatCubeCommand;
-import org.usfirst.frc.team5987.robot.commands.TimeEatCubeCommand;
+
+import org.usfirst.frc.team5987.robot.commands.DriveToPointCommand;
+import org.usfirst.frc.team5987.robot.commands.EatCubeByHoldCommand;
+import org.usfirst.frc.team5987.robot.commands.EatCubeByTimeCommand;
 import org.usfirst.frc.team5987.robot.commands.ThrowUpCubeCommand;
 
 /**
@@ -57,10 +58,10 @@ public class OI {
 	
 	public OI(){
 		
-		a.whenPressed(new DriveCommand());
-		b.whenPressed(new TimeEatCubeCommand());
+		a.whenPressed(new DriveToPointCommand(50));
+		b.whenPressed(new EatCubeByTimeCommand(3.5)); //time in seconds
 		x.whenPressed(new ThrowUpCubeCommand());
-		y.whileHeld(new HoldEatCubeCommand());
+		y.whileHeld(new EatCubeByHoldCommand()); //time in seconds
 		
 	}
 }

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5987.robot.commands;
 
+import org.usfirst.frc.team5987.robot.Constants;
 import org.usfirst.frc.team5987.robot.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
@@ -22,8 +23,8 @@ public class ThrowUpCubeCommand extends Command {
     protected void initialize() {
     	wait.reset();
     	wait.start();
-    	Robot.intakeSubsystem.setSpeed(-0.7);
-    	Robot.gripperSubsystem.setSpeed(-0.7);
+    	Robot.intakeSubsystem.setSpeed(-Constants.intakeSpeedOut);
+    	Robot.gripperSubsystem.setSpeed(-Constants.gripperSpeedOut);
     }
 
     // Called repeatedly when this Command is scheduled to run

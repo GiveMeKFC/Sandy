@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5987.robot.commands;
 
+import org.usfirst.frc.team5987.robot.Constants;
 import org.usfirst.frc.team5987.robot.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
@@ -8,22 +9,25 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TimeEatCubeCommand extends Command {
+public class EatCubeByTimeCommand extends Command {
 	
 	Timer wait = new Timer();
 	
-    public TimeEatCubeCommand() {
+	private double timeToWait = 0;
+	
+    public EatCubeByTimeCommand(double time) {
     	
     	requires(Robot.intakeSubsystem);
     	requires(Robot.gripperSubsystem);
+    	timeToWait = time;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	wait.reset();
     	wait.start();
-    	Robot.intakeSubsystem.setSpeed(0.7);
-    	Robot.gripperSubsystem.setSpeed(0.7);
+    	Robot.intakeSubsystem.setSpeed(Constants.intakeSpeedIn);
+    	Robot.gripperSubsystem.setSpeed(Constants.gripperSpeedIn);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +36,7 @@ public class TimeEatCubeCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return wait.get() > 3;
+        return wait.get() > timeToWait;
     }
 
     // Called once after isFinished returns true

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5987.robot.commands;
 
+import org.usfirst.frc.team5987.robot.Constants;
 import org.usfirst.frc.team5987.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -7,9 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class HoldEatCubeCommand extends Command {
+public class EatCubeByHoldCommand extends Command {
 
-    public HoldEatCubeCommand() {
+    public EatCubeByHoldCommand() {
     	
     	requires(Robot.intakeSubsystem);
     	requires(Robot.gripperSubsystem);
@@ -22,8 +23,8 @@ public class HoldEatCubeCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.intakeSubsystem.setSpeed(0.7);
-    	Robot.gripperSubsystem.setSpeed(0.7);
+    	Robot.intakeSubsystem.setSpeed(Constants.intakeSpeedIn);
+    	Robot.gripperSubsystem.setSpeed(Constants.gripperSpeedIn);
     }
 
     // Make this return true when this Command no longer needs to run execute()
