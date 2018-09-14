@@ -32,7 +32,7 @@ public class EatCubeCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return wait.get() > 0.99;
+        return wait.get() > 3;
     }
 
     // Called once after isFinished returns true
