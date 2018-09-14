@@ -18,8 +18,8 @@ public class intakeSubsystem extends Subsystem {
     
     public intakeSubsystem(){
     	
-    	intakeLeft.setInverted(false);
-    	intakeRight.setInverted(true);
+    	intakeLeft.setInverted(true);
+    	intakeRight.setInverted(false);
     	
     }
     

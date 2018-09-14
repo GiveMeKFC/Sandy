@@ -17,8 +17,8 @@ public class gripperSubsystem extends Subsystem {
     
     public gripperSubsystem(){
     	
-    	gripperLeft.setInverted(false);
-    	gripperRight.setInverted(true);
+    	gripperLeft.setInverted(true);
+    	gripperRight.setInverted(false);
     	
     }
     
