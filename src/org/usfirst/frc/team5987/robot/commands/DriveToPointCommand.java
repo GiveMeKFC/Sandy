@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveToPointCommand extends Command {
 	
+	double startDistance = 0;
 	
 	double distanceToDrive = 0;
 	
@@ -24,12 +25,15 @@ public class DriveToPointCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+    	startDistance = Robot.driveSubsystem.getDistance();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	if (Robot.driveSubsystem.getDistance() >= distanceToDrive){
+    	if ((Robot.driveSubsystem.getDistance() - startDistance) >= distanceToDrive){
     		
     		end();
     		
