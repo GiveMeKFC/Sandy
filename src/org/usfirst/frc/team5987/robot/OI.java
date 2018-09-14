@@ -58,7 +58,7 @@ public class OI {
 	
 	public OI(){
 		
-		a.whenPressed(new DriveToPointCommand(0.5)); // in meters
+		a.whenPressed(new DriveToPointCommand(1)); // in meters
 		b.whenPressed(new EatCubeByTimeCommand(3.5)); //time in seconds
 		x.whenPressed(new ThrowUpCubeCommand(0.75)); //time in seconds
 		y.whileHeld(new EatCubeByHoldCommand()); 

@@ -59,7 +59,7 @@ public class driveSubsystem extends Subsystem {
     
     public double getDistance() {
     	
-    	return ((EncoderLeft.getDistance()+EncoderRight.getDistance())/2);
+    	return ((EncoderLeft.getDistance() + (-EncoderRight.getDistance()))/2);
     	
     }
     

@@ -32,21 +32,15 @@ public class DriveToPointCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
-    	if ((Robot.driveSubsystem.getDistance() - startDistance) >= distanceToDrive){
-    		
-    		end();
-    		
-    	} else{
-    		
-    		Robot.driveSubsystem.setSpeed(Constants.driveSpeedInAuto, Constants.driveSpeedInAuto);
-    	}
+    	  		
+    	Robot.driveSubsystem.setSpeed(Constants.driveSpeedInAuto, Constants.driveSpeedInAuto);
     	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	
+        return ((Robot.driveSubsystem.getDistance() - startDistance) >= distanceToDrive);
     }
 
     // Called once after isFinished returns true
