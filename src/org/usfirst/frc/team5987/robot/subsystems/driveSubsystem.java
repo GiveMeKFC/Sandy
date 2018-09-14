@@ -20,10 +20,10 @@ public class driveSubsystem extends Subsystem {
 	
 	public driveSubsystem(){
 		
-		MotorLeftBack.setInverted(true);
-    	MotorLeftFront.setInverted(true);
-    	MotorRightBack.setInverted(false);
-    	MotorRightFront.setInverted(false);
+		MotorLeftBack.setInverted(false);
+    	MotorLeftFront.setInverted(false);
+    	MotorRightBack.setInverted(true);
+    	MotorRightFront.setInverted(true);
 	}
 	
     public void initDefaultCommand() {
