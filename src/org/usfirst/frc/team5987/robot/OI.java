@@ -13,7 +13,7 @@ import org.usfirst.frc.team5987.robot.commands.DriveCommand;
 public class OI {
 	
 	public XboxController xbox = new XboxController(2);
-
+	
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -23,6 +23,7 @@ public class OI {
     // Button button = new JoystickButton(stick, buttonNumber);
     
 	Button a = new JoystickButton(xbox, 1);
+	Button b = new JoystickButton(xbox, 3);
 	
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
@@ -47,6 +48,8 @@ public class OI {
 	public OI(){
 		
 		a.whenPressed(new DriveCommand());
+		b.whenPressed(new DriveCommand());
+
 		
 	}
 }
