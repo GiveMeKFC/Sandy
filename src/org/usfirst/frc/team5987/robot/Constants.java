@@ -8,6 +8,7 @@ public class Constants {
 	public static double intakeSpeedIn = 0.6;
 	public static double intakeSpeedOut = 0.85;
 	
+	public static double driveSpeedInAuto = 0.3;
 	
 
 }

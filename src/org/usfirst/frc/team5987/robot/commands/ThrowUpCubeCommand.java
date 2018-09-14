@@ -12,11 +12,14 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ThrowUpCubeCommand extends Command {
 	
 	Timer wait = new Timer();
+	double timeToWait = 0;
 
-    public ThrowUpCubeCommand() {
+    public ThrowUpCubeCommand(double time) {
 
     	requires(Robot.intakeSubsystem);
     	requires(Robot.gripperSubsystem);
+    	
+    	timeToWait = time;
     }
 
     // Called just before this Command runs the first time
@@ -33,7 +36,7 @@ public class ThrowUpCubeCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return wait.get() > 0.75;
+    	return wait.get() > timeToWait;
     }
 
     // Called once after isFinished returns true

@@ -4,6 +4,7 @@ package org.usfirst.frc.team5987.robot.subsystems;
 import org.usfirst.frc.team5987.robot.RobotMap;
 import org.usfirst.frc.team5987.robot.commands.JoystickCommand;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -18,9 +19,12 @@ public class driveSubsystem extends Subsystem {
 	Victor MotorRightFront = new Victor(RobotMap.driveRightFrontMotor);
 	Victor MotorLeftBack = new Victor(RobotMap.driveLeftRearMotor);
 	Victor MotorLeftFront = new Victor(RobotMap.driveLeftFrontMotor);
+	Encoder EncoderLeft = new Encoder(RobotMap.driveLeftEncoderChannelA, RobotMap.driveLeftEncoderChannelB);
+	Encoder EncoderRight = new Encoder(RobotMap.driveRightEncoderChannelA, RobotMap.driveRightEncoderChannelB);
 	
 	public driveSubsystem(){
-		
+		EncoderLeft.setDistancePerPulse(RobotMap.driveEncoderDistancePerPulse);
+		EncoderRight.setDistancePerPulse(RobotMap.driveEncoderDistancePerPulse);
 		MotorLeftBack.setInverted(false);
     	MotorLeftFront.setInverted(false);
     	MotorRightBack.setInverted(true);
@@ -52,5 +56,23 @@ public class driveSubsystem extends Subsystem {
     	MotorRightFront.set(speed);
     	
     }
+    
+    public double getDistance() {
+    	
+    	return ((EncoderLeft.getDistance()+EncoderRight.getDistance())/2);
+    	
+    }
+    
+    public double getLeftDistance() {
+    	
+    	return EncoderLeft.getDistance();
+    	
+    }
+
+    public double getRightDistance() {
+	
+    	return EncoderRight.getDistance();
+	
+}
 }
 

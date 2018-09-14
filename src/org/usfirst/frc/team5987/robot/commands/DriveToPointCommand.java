@@ -1,6 +1,9 @@
 package org.usfirst.frc.team5987.robot.commands;
 
+import org.usfirst.frc.team5987.robot.Constants;
 import org.usfirst.frc.team5987.robot.Robot;
+import org.usfirst.frc.team5987.robot.RobotMap;
+import org.usfirst.frc.team5987.robot.subsystems.driveSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -8,10 +11,14 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class DriveToPointCommand extends Command {
-
+	
+	
+	double distanceToDrive = 0;
+	
     public DriveToPointCommand(double distance) {
      
     	requires(Robot.driveSubsystem);
+    	distanceToDrive = distance;
     	
     }
 
@@ -22,7 +29,14 @@ public class DriveToPointCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	
+    	if (Robot.driveSubsystem.getDistance() >= distanceToDrive){
+    		
+    		end();
+    		
+    	} else{
+    		
+    		Robot.driveSubsystem.setSpeed(Constants.driveSpeedInAuto, Constants.driveSpeedInAuto);
+    	}
     	
     }
 
@@ -33,6 +47,9 @@ public class DriveToPointCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+
+    	Robot.driveSubsystem.setSpeed(0, 0);
+    	
     }
 
     // Called when another command which requires one or more of the same

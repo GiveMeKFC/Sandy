@@ -55,6 +55,7 @@ public class RobotMap {
 	public static final int driveRightEncoderChannelB = 3; // TODO: CHANGE!
 	public static final int driveLeftEncoderChannelA = 0; // TODO: CHANGE!
 	public static final int driveLeftEncoderChannelB = 1; // TODO: CHANGE!
+	public static final double driveEncoderDistancePerPulse = 0.00133;
 	/*-------------------------------------*/
 
 	/*done---------------GRIPPER---------------*/
