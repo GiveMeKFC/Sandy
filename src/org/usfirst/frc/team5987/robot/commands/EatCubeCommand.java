@@ -22,8 +22,8 @@ public class EatCubeCommand extends Command {
     protected void initialize() {
     	wait.reset();
     	wait.start();
-    	Robot.intakeSubsystem.setSpeed(0.5);
-    	Robot.gripperSubsystem.setSpeed(0.5);
+    	Robot.intakeSubsystem.setSpeed(0.7);
+    	Robot.gripperSubsystem.setSpeed(0.7);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +32,7 @@ public class EatCubeCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return wait.get() > 4.99;
+        return wait.get() > 0.99;
     }
 
     // Called once after isFinished returns true
