@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5987.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -15,6 +16,8 @@ import org.usfirst.frc.team5987.robot.commands.ThrowUpCubeCommand;
  */
 public class OI {
 	
+	public Joystick left = new Joystick(0);
+	public Joystick right = new Joystick(1);
 	public XboxController xbox = new XboxController(2);
 	
 	
@@ -24,6 +27,7 @@ public class OI {
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
+	
     
 	Button a = new JoystickButton(xbox, 1);
 	Button b = new JoystickButton(xbox, 2);

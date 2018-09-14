@@ -2,6 +2,7 @@
 package org.usfirst.frc.team5987.robot.subsystems;
 
 import org.usfirst.frc.team5987.robot.RobotMap;
+import org.usfirst.frc.team5987.robot.commands.JoystickCommand;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -28,10 +29,10 @@ public class driveSubsystem extends Subsystem {
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new JoystickCommand());
     }
     
-    public void setSpeed(double RightSpeed,double LeftSpeed) {
+    public void setSpeed(double LeftSpeed,double RightSpeed) {
     	
     	MotorLeftBack.set(LeftSpeed);
     	MotorLeftFront.set(LeftSpeed);
