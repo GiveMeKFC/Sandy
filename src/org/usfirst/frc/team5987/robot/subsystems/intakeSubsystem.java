@@ -4,11 +4,11 @@ import org.usfirst.frc.team5987.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+import auxiliary.Watch_Dogeable;
 /**
  *
  */
-public class intakeSubsystem extends Subsystem {
+public class intakeSubsystem extends Subsystem implements Watch_Dogeable {
 	
 	Victor intakeLeft = new Victor (RobotMap.intakeMotorLeft);
     Victor intakeRight = new Victor (RobotMap.intakeMotorRight);
