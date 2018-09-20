@@ -40,10 +40,10 @@ public class Degrees90Command extends Command {
     protected boolean isFinished() {
     	
     	double Left = -(startPositionLeft-Robot.driveSubsystem.getLeftDistance());
-    	double Right = (startPositionLeft-Robot.driveSubsystem.getLeftDistance());
+    	double Right = (startPositionRight-Robot.driveSubsystem.getRightDistance());
     	double avr = (Left + Right) / 2;
-        return avr > 40;
-    }s
+        return avr > 0.522025/2;
+    }
 
     // Called once after isFinished returns true
     protected void end() {

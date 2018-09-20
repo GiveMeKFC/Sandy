@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-
+import org.usfirst.frc.team5987.robot.commands.Degrees90Command;
 import org.usfirst.frc.team5987.robot.commands.DriveToPointCommand;
 import org.usfirst.frc.team5987.robot.commands.EatCubeByHoldCommand;
 import org.usfirst.frc.team5987.robot.commands.EatCubeByTimeCommand;
@@ -58,7 +58,7 @@ public class OI {
 	
 	public OI(){
 		
-		a.whenPressed(new DriveToPointCommand(1)); // in meters
+		a.whenPressed(new Degrees90Command()); // in meters
 		b.whenPressed(new EatCubeByTimeCommand(3.5)); //time in seconds
 		x.whenPressed(new ThrowUpCubeCommand(0.75)); //time in seconds
 		y.whileHeld(new EatCubeByHoldCommand()); 

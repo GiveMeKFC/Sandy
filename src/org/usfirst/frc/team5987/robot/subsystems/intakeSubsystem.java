@@ -33,5 +33,29 @@ public class intakeSubsystem extends Subsystem implements Watch_Dogeable {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+
+	@Override
+	public void bork() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void necromancy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean wakeMeUp() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean ded() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
 
