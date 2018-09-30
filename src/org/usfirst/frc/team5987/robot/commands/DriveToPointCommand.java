@@ -23,7 +23,7 @@ public class DriveToPointCommand extends Command {
 	private static NetworkTable driveTable = Robot.driveSubsystem.driveTable;
 	
     public DriveToPointCommand(double distance) {
-     
+    	Robot.driveSubsystem.driveSpeedInAuto.setDouble(Robot.driveSubsystem.driveSpeedInAuto.getDouble(Constants.driveSpeedInAuto));
     	requires(Robot.driveSubsystem);
     	distanceToDrive = distance;
     	
@@ -39,7 +39,7 @@ public class DriveToPointCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	Constants.driveSpeedInAuto = driveSpeedInAuto.getDouble(Constants.driveSpeedInAuto);
+    	Constants.driveSpeedInAuto = Robot.driveSubsystem.driveSpeedInAuto.getDouble(Constants.driveSpeedInAuto);
     	Robot.driveSubsystem.setSpeed(Constants.driveSpeedInAuto, Constants.driveSpeedInAuto);
     	
     }

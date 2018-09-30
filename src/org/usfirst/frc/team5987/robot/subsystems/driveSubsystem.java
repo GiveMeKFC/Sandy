@@ -29,7 +29,7 @@ public class driveSubsystem extends Subsystem {
 	// Creates a new NetworkTable
 	public NetworkTable driveTable = NetworkTableInstance.getDefault().getTable("driveTable");
 
-	NetworkTableEntry driveSpeedInAuto = driveTable.getEntry("driveSpeedInAuto");
+	public NetworkTableEntry driveSpeedInAuto = driveTable.getEntry("driveSpeedInAuto");
 	
 	public driveSubsystem(){
 		EncoderLeft.setDistancePerPulse(RobotMap.driveEncoderDistancePerPulse);
