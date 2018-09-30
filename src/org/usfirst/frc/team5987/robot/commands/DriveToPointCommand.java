@@ -5,8 +5,12 @@ import org.usfirst.frc.team5987.robot.Robot;
 import org.usfirst.frc.team5987.robot.RobotMap;
 import org.usfirst.frc.team5987.robot.subsystems.driveSubsystem;
 
-import edu.wpi.first.wpilibj.command.Command;
 
+
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 /**
  *
  */
@@ -15,6 +19,8 @@ public class DriveToPointCommand extends Command {
 	double startDistance = 0;
 	
 	double distanceToDrive = 0;
+	
+	private static NetworkTable driveTable = Robot.driveSubsystem.driveTable;
 	
     public DriveToPointCommand(double distance) {
      
@@ -32,7 +38,8 @@ public class DriveToPointCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	  		
+    	
+    	Constants.driveSpeedInAuto = driveSpeedInAuto.getDouble(Constants.driveSpeedInAuto);
     	Robot.driveSubsystem.setSpeed(Constants.driveSpeedInAuto, Constants.driveSpeedInAuto);
     	
     }

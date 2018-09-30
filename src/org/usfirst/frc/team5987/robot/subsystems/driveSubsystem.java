@@ -7,6 +7,10 @@ import org.usfirst.frc.team5987.robot.commands.JoystickCommand;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 
 /**
  *
@@ -21,6 +25,11 @@ public class driveSubsystem extends Subsystem {
 	Victor MotorLeftFront = new Victor(RobotMap.driveLeftFrontMotor);
 	Encoder EncoderLeft = new Encoder(RobotMap.driveLeftEncoderChannelA, RobotMap.driveLeftEncoderChannelB);
 	Encoder EncoderRight = new Encoder(RobotMap.driveRightEncoderChannelA, RobotMap.driveRightEncoderChannelB);
+	
+	// Creates a new NetworkTable
+	public NetworkTable driveTable = NetworkTableInstance.getDefault().getTable("driveTable");
+
+	NetworkTableEntry driveSpeedInAuto = driveTable.getEntry("driveSpeedInAuto");
 	
 	public driveSubsystem(){
 		EncoderLeft.setDistancePerPulse(RobotMap.driveEncoderDistancePerPulse);
@@ -59,7 +68,7 @@ public class driveSubsystem extends Subsystem {
     
     public double getDistance() {
     	
-    	return ((EncoderLeft.getDistance() + (-EncoderRight.getDistance()))/2);
+    	return ((getLeftDistance() + ( getRightDistance()))/2);
     	
     }
     
@@ -71,7 +80,7 @@ public class driveSubsystem extends Subsystem {
 
     public double getRightDistance() {
 	
-    	return EncoderRight.getDistance();
+    	return -EncoderRight.getDistance();
 	
 }
 }
